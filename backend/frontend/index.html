@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Security Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="orb2"></div>
+    <div class="container">
+        <header>
+            <h1>&#128272; Password Security Tool</h1>
+            <p>Check password strength and generate secure passwords</p>
+        </header>
+
+        <!-- Password Checker Section -->
+        <section class="card">
+            <h2>Check Password Strength</h2>
+            <div class="input-group">
+                <input type="password" id="passwordInput" placeholder="Enter password to check">
+                <button onclick="togglePassword()" class="toggle-btn">&#128065;&#65039;</button>
+            </div>
+            <button onclick="checkPassword()" class="btn btn-primary">Check Strength</button>
+
+            <div id="checkResult" class="result hidden">
+                <h3>Results:</h3>
+                <div class="strength-meter">
+                    <div id="strengthBar" class="strength-bar"></div>
+                </div>
+                <p class="strength-label" id="strengthLabel"></p>
+                <p class="score" id="scoreLabel"></p>
+                <div id="feedbackList" class="feedback-list"></div>
+            </div>
+        </section>
+
+        <!-- Password Generator Section -->
+        <section class="card">
+            <h2>Generate Secure Password</h2>
+            <div class="input-group">
+                <label for="lengthInput">Password Length:</label>
+                <input type="number" id="lengthInput" value="16" min="8" max="32">
+            </div>
+            <button onclick="generatePassword()" class="btn btn-success">Generate Password</button>
+
+            <div id="generateResult" class="result hidden">
+                <h3>Generated Password:</h3>
+                <div class="password-display">
+                    <input type="text" id="generatedPassword" readonly>
+                    <button onclick="copyPassword()" class="btn btn-copy">&#128203; Copy</button>
+                </div>
+                <p class="strength-label" id="genStrengthLabel"></p>
+                <p class="score" id="genScoreLabel"></p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Created for Cybersecurity Learning | <a href="https://github.com/keerthi418/password-security-tool" target="_blank">GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
